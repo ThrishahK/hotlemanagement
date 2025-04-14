@@ -3,13 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reviews</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Top Reviews - Luxurious Hotels</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #000;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: burlywood;
+        }
+        header {
+            background-color: #111;
+            text-align: center;
+            padding: 20px;
+            font-size: 2em;
+        }
+        nav {
+    background: #030396d6;
+    padding: 15px 0;
+    text-align: center;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: burlywood;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: burlywood;
+    color: black;
+    border-radius: 5px;
+}
+        .section-title {
+            text-align: center;
+            font-size: 1.8em;
+            margin: 30px 0 15px;
+        }
+        .review-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px 40px;
+        }
+        .review-box {
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+            width: 260px;
+            transition: transform 0.3s;
+            box-shadow: 0 0 10px rgba(222, 184, 135, 0.4);
+        }
+        .review-box:hover {
+            transform: translateY(-5px);
+        }
+        .review-box h3 {
+            margin-top: 0;
+            color: #fff;
+        }
+        .review-box p {
+            color: #ccc;
+        }
+        .button {
+            background-color: burlywood;
+            color: black;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
-    <header class="welcome-header">
-        <h1>Luxurious Hotels</h1>
+    <header>
+        Luxurious Hotels
     </header>
 
     <nav>
@@ -17,35 +100,72 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="#">Reviews</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
         </ul>
     </nav>
 
-    <section class="hotel-section">
-        <h2>Hotel Reviews</h2>
-        <div class="hotel-container">
-            <div class="hotel-box">
-                <h3>Grand Palace</h3>
-                <p>⭐ 4.5 | New York</p>
-                <button>Book Now</button>
-            </div>
-            <div class="hotel-box">
-                <h3>Sea View Resort</h3>
-                <p>⭐ 4.2 | Los Angeles</p>
-                <button>Book Now</button>
-            </div>
-            <div class="hotel-box">
-                <h3>Mountain Inn</h3>
-                <p>⭐ 4.8 | Denver</p>
-                <button>Book Now</button>
-            </div>
-            <div class="hotel-box">
-                <h3>Urban Stay</h3>
-                <p>⭐ 4.3 | Chicago</p>
-                <button>Book Now</button>
-            </div>
+    <h2 class="section-title">Top Hotel Reviews</h2>
+    <div class="review-container">
+        <div class="review-box">
+            <img class=h1 src="hotel5.0.jfif" alt="Emerald Bay Resort">
+            <h3>Emerald Bay Resort</h3>
+            <div class="hotel-location">Honolulu, Waikiki, HI</div>
+            <div class="rating">Rating: ⭐⭐⭐⭐⭐ (4.9)</div>
+            <p class="review-description">"Absolutely breathtaking! The views were stunning, and the service was impeccable. A true paradise. We can't wait to return!" - The Johnsons</p>
+            <a href="booking.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="book-button" data-hotel-id="H009">Book Now</button></a>
         </div>
-    </section>
+        <div class="review-box">
+            <img src="hotel3.jfif" alt="Mountain Inn">
+            <h3>Mountain Inn</h3>
+            <div class="hotel-location">Denver, Downtown, CO</div>
+            <div class="rating">Rating: ⭐⭐⭐⭐⭐ (4.8)</div>
+            <p class="review-description">"A cozy and charming retreat in the heart of the mountains. The fireplace in our room was a delight, and the staff went above and beyond to make our stay memorable. Highly recommended for nature lovers!" - Sarah M.</p>
+            <a href="booking.html" style="display: block; text-decoration: none; color: inherit;">
+                <button class="book-button" data-hotel-id="H003">Book Now</button>
+            </a>
+        </div>
+        <div class="review-box">
+            <img src="hotel6.jfif" alt="Royal Orchid">
+            <h3>Royal Orchid</h3>
+            <div class="hotel-location">Miami, South Beach, FL</div>
+            <div class="rating">Rating: ⭐⭐⭐⭐ (4.7)</div>
+            <p class="review-description">"Fantastic location right on South Beach! The rooms were stylish and comfortable, and the pool area was a great place to relax. The concierge was also very helpful with local recommendations. We had a wonderful time!" - Mark & Lisa</p>
+            <a href="booking.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="book-button" data-hotel-id="H006">Book Now</button></a>
+        </div>
+    </div>
+
+    <h2 class="section-title">Top Dining Experiences</h2>
+    <div class="review-container">
+        <div class="review-box">
+            <img src="d8.jfif" alt="Moonlit Bites Retreat">
+            <h3>Moonlit Bites Retreat</h3>
+            <p>Veg & Non-Veg | Dinner</p>
+            <p>"Aromatic Indian cuisine, amazing ambiance."</p>
+            <div class="rating">Rating: ⭐⭐⭐⭐⭐ (5)</div>
+            <a href="dining.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="button">Reserve Table</button></a>
+        </div>
+        <div class="review-box">
+            <img src="d5.jfif" alt="Oceanview Dining Lodge">
+            <h3>Oceanview Dining Lodge</h3>
+            <p>Veg Only | Lunch</p>
+            <p>"Fresh ingredients and calm vibes."</p>
+            <div class="rating">Rating: ⭐⭐⭐⭐⭐ (5)</div>
+            <a href="dining.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="button">Reserve Table</button></a>
+        </div>
+        <div class="review-box">
+            <img src="d10.jfif" alt="Crimson Dish Residency">
+            <h3>Crimson Dish Residency</h3>
+            <p>Non-Veg Only | Night Dining</p>
+            <p>"Best grilled platters in town."</p>
+            <div class="rating">Rating: ⭐⭐⭐⭐ (4.9)</div>
+            <a href="dining.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="button">Reserve Table</button></a>
+        </div>
+    </div>
 
 </body>
 </html>

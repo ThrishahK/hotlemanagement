@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dining Reservation</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            background-color:black; /* Light background */
+        }
+        .container {
+            background-color:black;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50; /* Dark heading color */
+        }
+        .button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: #3498db; /* Blue button */
+            color: white;
+        }
+        button:hover {
+            background-color: #2980b9; /* Darker blue hover */
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #34495e; /* Dark label color */
+        }
+        input[type="text"],
+        input[type="tel"],
+        input[type="time"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #bdc3c7; /* Lighter border */
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        #reservationForm, #cancellationForm {
+            display: none; /* Initially hide the forms */
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: grey;
+        }
+        #reservationForm.active, #cancellationForm.active {
+            display: block; /* Show the active form */
+        }
+        .error-message {
+            color: #e74c3c; /* Red error message */
+            margin-top: 5px;
+        }
+        .success-message {
+            color: #2ecc71; /* Green success message */
+            margin-top: 5px;
+            text-align: center;
+        }
+        .booking-id-display {
+            margin-top: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #ecf0f1;
+            text-align: center;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        nav {
+    background: #030396d6;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: burlywood;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: burlywood;
+    color: black;
+    border-radius: 5px;
+}
+.welcome-header {
+    background: black;
+    padding: 20px;
+    color: burlywood;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    
+        <header class="welcome-header">
+            <h1>Welcome to Our Luxurious Hotels</h1>
+            <p>Find your perfect stay with comfort and elegance.</p>
+        </header>
+    
+        <nav>
+            <ul>
+                <li><a href="dineoptions.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+        </nav>
+    <div class="container">
+        <h2>Dining Reservation</h2>
+        <div class="button-container">
+            <button id="makeReservationBtn">Make Reservation</button>
+            <button id="cancelReservationBtn">Cancel Reservation</button>
+        </div>
+
+        <form id="reservationForm">
+            <h3>Make a Reservation</h3>
+            <div class="form-group">
+                <label for="location">Dining Spot:</label>
+                <select id="location" name="location" required>
+                    <option value="">-- Select Location --</option>
+                    <option value="rooftop">Rooftop</option>
+                    <option value="cafe">Cafe</option>
+                    <option value="bar_and_restaurant">Bar & Restaurant</option>
+                    <option value="beachside">Beachside</option>
+                    <option value="buffet">Buffet</option>
+                </select>
+                <div class="error-message" id="locationError"></div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <div class="error-message" id="phoneError"></div>
+            </div>
+            <div class="form-group">
+                <label for="diners">Number of Diners:</label>
+                <input type="number" id="diners" name="diners" required min="1">
+                <div class="error-message" id="dinersError"></div>
+            </div>
+            <div class="form-group">
+                <label for="timing">Reservation Timing:</label>
+                <input type="time" id="timing" name="timing" required>
+                <div class="error-message" id="timingError"></div>
+            </div>
+            <div class="form-group">
+                <label>Food Preference:</label>
+                <input type="checkbox" id="veg" name="food_preference" value="veg">
+                <label for="veg">Veg</label>
+                <input type="checkbox" id="non_veg" name="food_preference" value="non_veg">
+                <label for="non_veg">Non-Veg</label>
+                <div class="error-message" id="foodPreferenceError"></div>
+            </div>
+            <button type="submit">Make Reservation</button>
+            <div class="success-message" id="reservationSuccess" style="display:none;">Reservation submitted successfully!</div>
+            <div class="error-message" id="reservationGeneralError" style="display:none;">An error occurred. Please try again.</div>
+            <div class="booking-id-display" id="bookingIdDisplay" style="display:none;">
+                Your Booking ID: <span id="generatedBookingId"></span>
+            </div>
+        </form>
+
+        <form id="cancellationForm">
+            <h3>Cancel Reservation</h3>
+            <div class="form-group">
+                <label for="cancelPhone">Phone Number:</label>
+                <input type="text" id="cancelPhone" name="cancelPhone" required>
+                <div class="error-message" id="cancelPhoneError"></div>
+            </div>
+            <div class="form-group">
+                <label for="bookingId">Booking Id:</label>
+                <input type="text" id="bookingId" name="bookingId" required>
+                <div class="error-message" id="bookingIdError"></div>
+            </div>
+            <button type="submit">Cancel Reservation</button>
+            <div class="success-message" id="cancellationSuccess" style="display:none;">Reservation cancelled successfully!</div>
+            <div class="error-message" id="cancellationGeneralError" style="display:none;">An error occurred. Please try again.</div>
+        </form>
+    </div>
+    <script>
+        const reservationForm = document.getElementById('reservationForm');
+        const cancellationForm = document.getElementById('cancellationForm');
+        const reservationSuccess = document.getElementById('reservationSuccess');
+        const reservationGeneralError = document.getElementById('reservationGeneralError');
+        const cancellationSuccess = document.getElementById('cancellationSuccess');
+        const cancellationGeneralError = document.getElementById('cancellationGeneralError');
+        const errorMessages = reservationForm.querySelectorAll('.error-message');
+        const cancelErrorMessages = cancellationForm.querySelectorAll('.error-message');
+        const bookingIdDisplay = document.getElementById('bookingIdDisplay');
+        const generatedBookingId = document.getElementById('generatedBookingId');
+
+        const makeReservationBtn = document.getElementById('makeReservationBtn');
+        const cancelReservationBtn = document.getElementById('cancelReservationBtn');
+
+
+        makeReservationBtn.addEventListener('click', function() {
+            reservationForm.classList.add('active');
+            cancellationForm.classList.remove('active');
+            resetErrors('cancellation');
+            resetMessages('cancellation');
+            bookingIdDisplay.style.display = 'none'; // Hide booking ID display when showing reservation form
+        });
+
+        cancelReservationBtn.addEventListener('click', function() {
+            cancellationForm.classList.add('active');
+            reservationForm.classList.remove('active');
+            resetErrors('reservation');
+            resetMessages('reservation');
+            bookingIdDisplay.style.display = 'none'; // Hide booking ID display when showing cancellation form
+        });
+
+        function generateBookingId() {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let bookingId = '';
+            for (let i = 0; i < 8; i++) {
+                bookingId += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return bookingId;
+        }
+
+        reservationForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            resetErrors('reservation');
+            resetMessages('reservation');
+
+            const location = document.getElementById('location').value;
+            const phone = document.getElementById('phone').value.trim();
+            const diners = document.getElementById('diners').value.trim();
+            const timing = document.getElementById('timing').value;
+            const veg = document.getElementById('veg').checked;
+            const nonVeg = document.getElementById('non_veg').checked;
+
+            let isValid = true;
+
+            if (location === '') {
+                document.getElementById('locationError').textContent = 'Please select a dining spot.';
+                isValid = false;
+            }
+            if (phone === '') {
+                document.getElementById('phoneError').textContent = 'Please enter your phone number.';
+                isValid = false;
+            }
+            if (diners === '' || parseInt(diners) <= 0) {
+                document.getElementById('dinersError').textContent = 'Please enter a valid number of diners.';
+                isValid = false;
+            }
+            if (timing === '') {
+                document.getElementById('timingError').textContent = 'Please select a reservation time.';
+                isValid = false;
+            }
+             if (!veg && !nonVeg) {
+                document.getElementById('foodPreferenceError').textContent = 'Please select your food preference.';
+                isValid = false;
+            }
+
+            if (isValid) {
+                console.log('Reservation Data:', { location, phone, diners, timing, veg, nonVeg });
+                // In a real application, send this data to the server using fetch
+                reservationSuccess.style.display = 'block';
+                reservationGeneralError.style.display = 'none';
+                const bookingId = generateBookingId();
+                generatedBookingId.textContent = bookingId;
+                bookingIdDisplay.style.display = 'block';
+                reservationForm.reset();
+                 setTimeout(() => {
+                    reservationSuccess.style.display = 'none';
+                    bookingIdDisplay.style.display = 'none';
+                }, 10000); // Keep for 10 seconds
+
+            } else {
+                reservationGeneralError.style.display = 'none';
+            }
+        });
+
+        cancellationForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            resetErrors('cancellation');
+            resetMessages('cancellation');
+
+            const cancelPhone = document.getElementById('cancelPhone').value.trim();
+            const bookingId = document.getElementById('bookingId').value.trim();
+
+            let isValid = true;
+
+
+            if (cancelPhone === '') {
+                document.getElementById('cancelPhoneError').textContent = 'Please enter your phone number.';
+                isValid = false;
+            }
+            if (bookingId === '') {
+                document.getElementById('bookingIdError').textContent = 'Please enter your booking ID.';
+                isValid = false;
+            }
+
+            if (isValid) {
+                console.log('Cancellation Data:', { cancelPhone, bookingId });
+               
+                cancellationSuccess.style.display = 'block';
+                cancellationGeneralError.style.display = 'none';
+                cancellationForm.reset();
+                setTimeout(() => {
+                    cancellationSuccess.style.display = 'none';
+                }, 3000);
+
+            } else {
+                cancellationGeneralError.style.display = 'none';
+            }
+        });
+
+        function resetErrors(formType) {
+            if (formType === 'reservation') {
+                errorMessages.forEach(error => error.textContent = '');
+                reservationGeneralError.style.display = 'none';
+            } else if (formType === 'cancellation') {
+                cancelErrorMessages.forEach(error => error.textContent = '');
+                cancellationGeneralError.style.display = 'none';
+            }
+
+        }
+        function resetMessages(formType) {
+             if (formType === 'reservation') {
+                reservationSuccess.style.display = 'none';
+                reservationGeneralError.style.display = 'none';
+            } else if (formType === 'cancellation') {
+                cancellationSuccess.style.display = 'none';
+                cancellationGeneralError.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

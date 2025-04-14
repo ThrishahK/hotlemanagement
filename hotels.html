@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Gallery</title>
+    <style>
+        nav {
+    background: #030396d6;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: burlywood;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: burlywood;
+    color: black;
+    border-radius: 5px;
+}
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .hotel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .hotel-card {
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .hotel-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .rating {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: gold;
+            margin-bottom: 10px;
+        }
+        .book-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .book-button:hover {
+            background-color: #0056b3;
+        }
+        .hotel-location {
+            font-style: italic;
+            color: #ccc;
+            margin-bottom: 5px;
+        }
+        .welcome-header {
+    background: black;
+    padding: 20px;
+    color: burlywood;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    
+    <header class="welcome-header">
+        <h1>Welcome to Our Luxurious Hotels</h1>
+        <p>Find your perfect stay with comfort and elegance.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+        </ul>
+    </nav>
+    <h1>Featured Hotels</h1>
+    <div class="hotel-grid">
+        <div class="hotel-card">
+            <img src="hotel1.jfif" alt="Grand Palace">
+            <h3>Grand Palace</h3>
+            <div class="hotel-location">New York, Manhattan, NY</div>
+            <div class="rating">Rating: ⭐⭐⭐⭐ (4.5)</div>
+            <a href="hotelbook.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="book-button" data-hotel-id="H001">Book Now</button></a>
+        </div>
+        <div class="hotel-card">
+            <img src="hotel2.jfif" alt="Sea View Resort">
+            <h3>Sea View Resort</h3>
+            <div class="hotel-location">Los Angeles, Santa Monica, CA</div>
+            <div class="rating">Rating: ⭐⭐⭐⭐ (4.2)</div>
+            <a href="hotelbook.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="book-button" data-hotel-id="H002">Book Now</button></a>
+        </div>
+        <div class="hotel-card">
+            <img src="hotel3.jfif" alt="Mountain Inn">
+            <h3>Mountain Inn</h3>
+            <div class="hotel-location">Denver, Downtown, CO</div>
+            <div class="rating">Rating: ⭐⭐⭐⭐⭐ (4.8)</div>
+            <a href="hotelbook.html" style="display: block; text-decoration: none; color: inherit;">
+                <button class="book-button" data-hotel-id="H003">Book Now</button>
+            </a>
+            
+        </div>
+        <div class="hotel-card">
+            <img src="hotel4.jfif" alt="Urban Stay">
+            <h3>Urban Stay</h3>
+            <div class="hotel-location">Chicago, Loop, IL</div>
+            <div class="rating">Rating: ⭐⭐⭐⭐ (4.3)</div>
+            <a href="hotelbook.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="book-button" data-hotel-id="H004">Book Now</button></a>
+        </div>
+        <div class="hotel-card">
+            <img src="hotel9.jfif" alt="Sunset Retreat">
+            <h3>Sunset Retreat</h3>
+            <div class="hotel-location">San Francisco, Golden Gate, CA</div>
+            <div class="rating">Rating: ⭐⭐⭐⭐ (4.6)</div>
+            <a href="hotelbook.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="book-button" data-hotel-id="H005">Book Now</button></a>
+        </div>
+        <div class="hotel-card">
+            <img src="hotel6.jfif" alt="Royal Orchid">
+            <h3>Royal Orchid</h3>
+            <div class="hotel-location">Miami, South Beach, FL</div>
+            <div class="rating">Rating: ⭐⭐⭐⭐ (4.7)</div>
+            <a href="hotelbook.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="book-button" data-hotel-id="H006">Book Now</button></a>
+        </div>
+        <div class="hotel-card">
+            <img src="hotel7.jfif" alt="Lakeview Lodge">
+            <h3>Lakeview Lodge</h3>
+            <div class="hotel-location">Seattle, Downtown, WA</div>
+            <div class="rating">Rating: ⭐⭐⭐⭐ (4.1)</div>
+            <a href="hotelbook.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="book-button" data-hotel-id="H007">Book Now</button></a>
+        </div>
+        <div class="hotel-card">
+            <img src="hotel8.jfif" alt="Skyline Suites">
+            <h3>Skyline Suites</h3>
+            <div class="hotel-location">Dallas, Uptown, TX</div>
+            <div class="rating">Rating: ⭐⭐⭐⭐ (4.4)</div>
+            <a href="hotelbook.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="book-button" data-hotel-id="H008">Book Now</button></a>
+        </div>
+        <div class="hotel-card">
+            <img src="hotel5.0.jfif" alt="Emerald Bay Resort">
+            <h3>Emerald Bay Resort</h3>
+            <div class="hotel-location">Honolulu, Waikiki, HI</div>
+            <div class="rating">Rating: ⭐⭐⭐⭐⭐ (4.9)</div>
+            <a href="hotelbook.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="book-button" data-hotel-id="H009">Book Now</button></a>
+        </div>
+        <div class="hotel-card">
+            <img src="hotel10.jfif" alt="Hillside Haven">
+            <h3>Hillside Haven</h3>
+            <div class="hotel-location">Atlanta, Midtown, GA</div>
+            <div class="rating">Rating: ⭐⭐⭐⭐ (4.0)</div>
+            <a href="hotelbook.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="book-button" data-hotel-id="H010">Book Now</button></a>
+        </div>
+        <div class="hotel-card">
+            <img src="hotelbook.jfif" alt="Luxury Stay">
+            <h3>Luxury Stay</h3>
+            <div class="hotel-location">Las Vegas, The Strip, NV</div>
+            <div class="rating">Rating: ⭐⭐⭐⭐ (4.5)</div>
+            <a href="hotelbook.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="book-button" data-hotel-id="H011">Book Now</button></a>
+        </div>
+    </div>
+</body>
+</html>

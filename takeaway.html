@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dining Options</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .dining-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .dining-card {
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .dining-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .dining-type {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .opening-time {
+            font-style: italic;
+            color: #ccc;
+            margin-bottom: 5px;
+        }
+        .rating {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: gold;
+            margin-bottom: 10px;
+        }
+        .features {
+            margin-bottom: 10px;
+            color: #eee;
+        }
+        .order-now-button {
+            background-color: #ffa500; /* Orange */
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .order-now-button:hover {
+            background-color: #cc8400;
+        }
+        nav {
+    background: #030396d6;
+    padding: 15px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: burlywood;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: burlywood;
+    color: black;
+    border-radius: 5px;
+}
+.welcome-header {
+    background: black;
+    padding: 20px;
+    color: burlywood;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    
+        <header class="welcome-header">
+            <h1>Welcome to Our Luxurious Hotels</h1>
+            <p>Find your perfect stay with comfort and elegance.</p>
+        </header>
+    
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+        </nav>
+    <h1>Dining Options</h1>
+    <div class="dining-grid">
+        <div class="dining-card">
+            <img src="d1.jfif" alt="The Golden Fork Inn">
+            <h3>The Golden Fork Inn</h3>
+            <div class="rating">Rating: ⭐⭐⭐⭐ (4)</div>
+            <a href="ordertakeaway.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="order-now-button" >Order Now</button></a>
+        </div>
+        <div class="dining-card">
+            <img src="d2.jfif" alt="Saffron Stay & Dine">
+            <h3>Saffron Stay & Dine</h3>
+            <div class="rating">Rating: ⭐⭐⭐⭐ (4)</div> 
+            <a href="ordertakeaway.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="order-now-button">Order Now</button></a>
+        </div>
+        <div class="dining-card">
+            <img src="d3.jfif" alt="The Silver Spoon Suites">
+            <h3>The Silver Spoon Suites</h3>
+            <div class="rating">Rating: ⭐⭐⭐ (3)</div>
+            <a href="ordertakeaway.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="order-now-button">Order Now</button></a>
+        </div>
+        <div class="dining-card">
+            <img src="d4.jfif" alt="Velvet Palate Resort">
+            <h3>Velvet Palate Resort</h3>
+            <div class="rating">Rating: ⭐⭐⭐⭐ (4)</div>
+            <a href="ordertakeaway.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="order-now-button">Order Now</button></a>
+        </div>
+        <div class="dining-card">
+            <img src="d5.jfif" alt="Oceanview Dining Lodge">
+            <h3>Oceanview Dining Lodge</h3>
+            <div class="rating">Rating: ⭐⭐⭐⭐⭐ (5)</div>
+            <button class="order-now-button">Order Now</button>
+        </div>
+        <div class="dining-card">
+            <img src="d6.jfif" alt="Royal Spice Haven">
+            <h3>Royal Spice Haven</h3>
+            <div class="rating">Rating: ⭐⭐⭐⭐⭐ (5)</div>
+            <a href="ordertakeaway.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="order-now-button">Order Now</button></a>
+        </div>
+        <div class="dining-card">
+            <img src="d7.jfif" alt="Emerald Plate Hotel">
+            <h3>Emerald Plate Hotel</h3>
+            <div class="rating">Rating: ⭐⭐⭐⭐⭐ (5)</div>
+            <a href="ordertakeaway.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="order-now-button">Order Now</button></a>
+        </div>
+        <div class="dining-card">
+            <img src="d8.jfif" alt="Moonlit Bites Retreat">
+            <h3>Moonlit Bites Retreat</h3>
+            <div class="rating">Rating: ⭐⭐⭐⭐⭐ (5)</div>
+            <a href="ordertakeaway.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="order-now-button">Order Now</button></a>
+        </div>
+        <div class="dining-card">
+            <img src="d9.jfif" alt="The Rustic Table Inn">
+            <h3>The Rustic Table Inn</h3>
+            <div class="rating">Rating: ⭐⭐⭐⭐⭐ (5)</div>
+            <a href="ordertakeaway.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="order-now-button">Order Now</button></a>
+        </div>
+        <div class="dining-card">
+            <img src="d10.jfif" alt="Sunset Flavors Hotel">
+            <h3>Sunset Flavors Hotel</h3>
+            
+            <div class="rating">Rating: ⭐⭐⭐⭐⭐ (5)</div>
+            <a href="ordertakeaway.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="order-now-button">Order Now</button></a>
+        </div>
+        <div class="dining-card">
+            <img src="d11.jfif" alt="Crimson Dish Residency">
+            <h3>Crimson Dish Residency</h3>
+            
+            <div class="rating">Rating: ⭐⭐⭐⭐⭐ (5)</div>
+            <a href="ordertakeaway.html" style="display: block; text-decoration: none; color: inherit;">
+            <button class="order-now-button">Order Now</button></a>
+        </div>
+    </div>
+</body>
+</html>

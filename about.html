@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Luxurious Hotels</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: black;
+      color:burlywood;
+    }
+
+    header {
+      background: linear-gradient(to right, #000, #222);
+      padding: 20px;
+      text-align: center;
+      color:burlywood;
+    }
+
+    nav {
+    background: #030396d6;
+    padding: 15px 0;
+    text-align: center;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: burlywood;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: burlywood;
+    color: black;
+    border-radius: 5px;
+}
+    .content {
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+      background-color:black;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .highlight {
+      color: #b8860b;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Luxurious Hotels</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+    </ul>
+  </nav>
+
+  <section class="content">
+    <p>Welcome to <span class="highlight">Luxurious Hotels</span>, where <strong>luxury meets convenience</strong>.</p>
+    <p>We offer a top-tier hotel management system designed to streamline your stay. Our services include:</p>
+    <ul>
+      <li>Seamless <strong>hotel booking</strong> based on your preferences</li>
+      <li>Access to <strong>premium amenities</strong></li>
+      <li>On-demand <strong>dining and takeaway services</strong></li>
+    </ul>
+    <p>Whether you seek a cozy retreat or a luxurious getaway, our platform guarantees <strong>comfort, quality, and satisfaction</strong>.</p>
+    <p>Experience hospitality the way it’s meant to be — <em>comfort, your way.</em></p>
+  </section>
+
+</body>
+</html>

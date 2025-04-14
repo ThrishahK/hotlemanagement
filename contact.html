@@ -1,31 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Luxurious Hotels</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: black;
+      color: burlywood;
+    }
+
+    header {
+      background: linear-gradient(to right, #000, #222);
+      padding: 20px;
+      text-align: center;
+      color: burlywood;
+    }
+
+    nav {
+    background: #030396d6;
+    padding: 15px 0;
+    text-align: center;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: burlywood;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: burlywood;
+    color: black;
+    border-radius: 5px;
+}
+
+    .container {
+      max-width: 700px;
+      background:grey;
+      margin: 40px auto;
+      color:black;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      animation: slideIn 1s ease-out;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: b;
+    }
+
+    form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #893535;
+      border-radius: 5px;
+      background-color: beige;
+      color:#000;
+    }
+
+    form textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    form button {
+      background-color: #030396d6;
+      color: burlywood;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      margin-top: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      background-color: #b8860b;
+    }
+
+    .info {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: burlywood;
+    }
+  </style>
 </head>
 <body>
 
-    <header class="welcome-header">
-        <h1>Luxurious Hotels</h1>
-    </header>
+  <header>
+    <h1>Luxurious Hotels</h1>
+  </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="reviews.html">Reviews</a></li>
-        </ul>
-    </nav>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+    </ul>
+  </nav>
 
-    <section class="content">
-        <p>Email: contact@hotel.com</p>
-        <p>Phone: +1 234 567 890</p>
-        <p>Address: 123 Luxury Street, City, Country</p>
-    </section>
+  <div class="container">
+    <h2>Contact Us</h2>
+    <form onsubmit="event.preventDefault(); alert('Thank you for reaching out! We’ll get back to you soon.')">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="info">
+      <p><strong>Email:</strong> support@luxurioushotels.com</p>
+      <p><strong>Phone:</strong> +91 98765 43210</p>
+      <p><strong>Address:</strong> Luxury Street, Paradise City, India</p>
+    </div>
+  </div>
 
 </body>
 </html>

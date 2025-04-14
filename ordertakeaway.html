@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Takeaway</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .food-item {
+            margin-bottom: 10px;
+        }
+        label {
+            margin-left: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #555;
+            border-radius: 4px;
+            background-color: #333;
+            color: white;
+            box-sizing: border-box;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #order-confirmation {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #555;
+            border-radius: 4px;
+            background-color: #222;
+            text-align: center;
+            display: none;
+        }
+        #cancel-order-section {
+            margin-top: 30px;
+            padding: 15px;
+            border: 1px solid #777;
+            border-radius: 4px;
+            background-color: #1a1a1a;
+        }
+        #cancel-order-section h3 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        #cancel-order-section input[type="text"] {
+            width: 80%;
+            margin: 0 auto 10px;
+            display: block;
+        }
+        #cancel-order-section button {
+            background-color: #f44336;
+        }
+        #cancel-order-section button:hover {
+            background-color: #d32f2f;
+        }
+        nav {
+            background: #030396d6;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: burlywood;
+            font-size: 18px;
+            padding: 10px 20px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: burlywood;
+            color: black;
+            border-radius: 5px;
+        }
+        .welcome-header {
+    background: black;
+    padding: 20px;
+    color: burlywood;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    
+        <header class="welcome-header">
+            <h1>Welcome to Our Luxurious Hotels</h1>
+            <p>Find your perfect stay with comfort and elegance.</p>
+        </header>
+    
+        <nav>
+            <ul>
+                <li><a href="takeaway.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+        </nav>
+    <div class="container">
+        <h2>Order Your Food</h2>
+        <form id="order-form">
+            <div class="form-group">
+                <h3>Select Your Food Items</h3>
+                <div class="food-item">
+                    <input type="checkbox" id="szechuan_noodles" name="food[]" value="Spicy Szechuan Noodles">
+                    <label for="szechuan_noodles">Spicy Szechuan Noodles</label>
+                </div>
+                <div class="food-item">
+                    <input type="checkbox" id="honey_chicken" name="food[]" value="Crispy Honey Glazed Chicken">
+                    <label for="honey_chicken">Crispy Honey Glazed Chicken</label>
+                </div>
+                <div class="food-item">
+                    <input type="checkbox" id="tomato_soup" name="food[]" value="Creamy Tomato Basil Soup">
+                    <label for="tomato_soup">Creamy Tomato Basil Soup</label>
+                </div>
+                <div class="food-item">
+                    <input type="checkbox" id="grilled_salmon" name="food[]" value="Grilled Salmon with Lemon Dill Sauce">
+                    <label for="grilled_salmon">Grilled Salmon with Lemon Dill Sauce</label>
+                </div>
+                <div class="food-item">
+                    <input type="checkbox" id="mushroom_risotto" name="food[]" value="Wild Mushroom Risotto">
+                    <label for="mushroom_risotto">Wild Mushroom Risotto</label>
+                </div>
+                <div class="food-item">
+                    <input type="checkbox" id="mango_salad" name="food[]" value="Mango Avocado Salad">
+                    <label for="mango_salad">Mango Avocado Salad</label>
+                </div>
+                <div class="food-item">
+                    <input type="checkbox" id="brownies" name="food[]" value="Chocolate Peanut Butter Brownies">
+                    <label for="brownies">Chocolate Peanut Butter Brownies</label>
+                </div>
+                <div class="food-item">
+                    <input type="checkbox" id="pancakes" name="food[]" value="Blueberry Pancakes">
+                    <label for="pancakes">Blueberry Pancakes</label>
+                </div>
+                <div class="food-item">
+                    <input type="checkbox" id="pad_thai" name="food[]" value="Vegetable Pad Thai">
+                    <label for="pad_thai">Vegetable Pad Thai</label>
+                </div>
+                <div class="food-item">
+                    <input type="checkbox" id="cheesecake" name="food[]" value="Strawberry Cheesecake">
+                    <label for="cheesecake">Strawberry Cheesecake</label>
+                </div>
+                <div class="food-item">
+                    <input type="checkbox" id="roasted_potatoes" name="food[]" value="Rustic Rosemary Roasted Potatoes">
+                    <label for="roasted_potatoes">Rustic Rosemary Roasted Potatoes</label>
+                </div>
+                
+                <div class="food-item">
+                    <input type="checkbox" id="pizza" name="food[]" value="Margherita Pizza">
+                    <label for="pizza">Margherita Pizza</label>
+                </div>
+                <div class="food-item">
+                    <input type="checkbox" id="burger" name="food[]" value="Classic Cheeseburger">
+                    <label for="burger">Classic Cheeseburger</label>
+                </div>
+                <div class="food-item">
+                    <input type="checkbox" id="fries" name="food[]" value="French Fries">
+                    <label for="fries">French Fries</label>
+                </div>
+                <div class="food-item">
+                    <input type="checkbox" id="coke" name="food[]" value="Coca-Cola">
+                    <label for="coke">Coca-Cola</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h3>Delivery Location</h3>
+                <textarea id="delivery_location" name="delivery_location" rows="3" placeholder="Enter your full delivery address"></textarea>
+            </div>
+
+            <div class="form-group">
+                <h3>Select Hotel (for internal orders)</h3>
+                <div>
+                    <input type="radio" id="golden_fork" name="hotel" value="The Golden Fork Inn">
+                    <label for="golden_fork">The Golden Fork Inn</label>
+                </div>
+                <div>
+                    <input type="radio" id="saffron_stay" name="hotel" value="Saffron Stay & Dine">
+                    <label for="saffron_stay">Saffron Stay & Dine</label>
+                </div>
+                <div>
+                    <input type="radio" id="silver_spoon" name="hotel" value="The Silver Spoon Suites">
+                    <label for="silver_spoon">The Silver Spoon Suites</label>
+                </div>
+                <div>
+                    <input type="radio" id="velvet_palate" name="hotel" value="Velvet Palate Resort">
+                    <label for="velvet_palate">Velvet Palate Resort</label>
+                </div>
+                <div>
+                    <input type="radio" id="oceanview" name="hotel" value="Oceanview Dining Lodge">
+                    <label for="oceanview">Oceanview Dining Lodge</label>
+                </div>
+                <div>
+                    <input type="radio" id="royal_spice" name="hotel" value="Royal Spice Haven">
+                    <label for="royal_spice">Royal Spice Haven</label>
+                </div>
+                <div>
+                    <input type="radio" id="emerald_plate" name="hotel" value="Emerald Plate Hotel">
+                    <label for="emerald_plate">Emerald Plate Hotel</label>
+                </div>
+                <div>
+                    <input type="radio" id="moonlit_bites" name="hotel" value="Moonlit Bites Retreat">
+                    <label for="moonlit_bites">Moonlit Bites Retreat</label>
+                </div>
+                <div>
+                    <input type="radio" id="rustic_table" name="hotel" value="The Rustic Table Inn">
+                    <label for="rustic_table">The Rustic Table Inn</label>
+                </div>
+                <div>
+                    <input type="radio" id="sunset_flavors" name="hotel" value="Sunset Flavors Hotel">
+                    <label for="sunset_flavors">Sunset Flavors Hotel</label>
+                </div>
+                <div>
+                    <input type="radio" id="crimson_dish" name="hotel" value="Crimson Dish Residency">
+                    <label for="crimson_dish">Crimson Dish Residency</label>
+                </div>
+                
+            </div>
+
+            <button type="button" onclick="placeOrder()">Place Order</button>
+        </form>
+
+        <div id="order-confirmation" style="display: none;">
+            <h3>Order Successful!</h3>
+            <p>Your Order ID is: <span id="order-id"></span></p>
+            <p>Items Ordered: <span id="ordered-items"></span></p>
+            <p>Delivery To: <span id="delivery-address"></span></p>
+            <p>Hotel:<span id="selected-hotel"></span></p>
+        </div>
+
+        <div id="cancel-order-section">
+            <h3>Cancel Order</h3>
+            <div class="form-group">
+                <label for="cancel_order_id">Enter Order ID to Cancel:</label>
+                <input type="text" id="cancel_order_id" name="cancel_order_id" placeholder="Enter your Order ID">
+            </div>
+            <button type="button" onclick="cancelOrder()">Cancel Order</button>
+            <p id="cancel-message" style="color: red; margin-top: 10px; text-align: center; display: none;"></p>
+        </div>
+    </div>
+
+    <script>
+        function generateOrderId() {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let orderId = '';
+            for (let i = 0; i < 5; i++) {
+                orderId += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return orderId;
+        }
+
+        function placeOrder() {
+            const selectedFood = [];
+            const foodCheckboxes = document.querySelectorAll('input[name="food[]"]:checked');
+            foodCheckboxes.forEach(checkbox => {
+                selectedFood.push(checkbox.value);
+            });
+
+            const deliveryLocation = document.getElementById('delivery_location').value;
+            const selectedHotelRadio = document.querySelector('input[name="hotel"]:checked');
+            const selectedHotel = selectedHotelRadio ? selectedHotelRadio.value : 'External';
+
+            if (selectedFood.length === 0) {
+                alert("Please select at least one food item.");
+                return;
+            }
+
+            
+
+            const orderId = generateOrderId();
+
+            document.getElementById('order-id').textContent = orderId;
+            document.getElementById('ordered-items').textContent = selectedFood.join(', ');
+            document.getElementById('delivery-address').textContent = deliveryLocation || 'N/A';
+            document.getElementById('order-confirmation').style.display = 'block';
+            document.getElementById('order-form').style.display = 'none';
+            alert(`Order is successfully done! Your Order ID is: ${orderId}`); // Added this line
+        }
+
+        function cancelOrder() {
+            const orderIdToCancel = document.getElementById('cancel_order_id').value;
+            if (orderIdToCancel.trim() === '') {
+                alert("Please enter the Order ID to cancel.");
+                return;
+            }
+            // In a real application, you would send this orderId to a server to process the cancellation.
+            document.getElementById('cancel-message').textContent = `Order with ID "${orderIdToCancel}" has been submitted for cancellation.`;
+            document.getElementById('cancel-message').style.display = 'block';
+            document.getElementById('cancel_order_id').value = ''; // Clear the input field
+        }
+    </script>
+</body>
+</html>
